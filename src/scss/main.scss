@@ -1,5 +1,7 @@
 @import "~normalize.css";
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
+@import "./modules/fruits.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -51,7 +53,6 @@
       color: #e1e1e2;
       font-family: "Rubik", sans-serif;
       font-size: 20px;
-      background-color: none;
     }
   }
   &__li:hover a {
