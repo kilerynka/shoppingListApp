@@ -23,6 +23,16 @@
       font-size: 24px;
     }
   }
+  &-shopList {
+    height: 42px;
+    width: 49px;
+    position: fixed;
+    bottom: 5%;
+    right: 10%;
+    background-image: url("./../assets/img/Mask\ group.svg");
+    background-position: cover;
+    background-repeat: no-repeat;
+  }
 }
 
 .section {
