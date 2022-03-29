@@ -17,6 +17,8 @@
 }
 
 .main {
+  grid-column: 5/9;
+  max-width: 1000px;
   min-height: 100vh;
   &__headerFruit {
     height: 59.75px;
@@ -48,6 +50,7 @@
     &-input:focus {
       background-color: #a7a6ad;
       outline: none;
+      color: black;
     }
     &-addFruit {
       width: 35%;
@@ -135,6 +138,9 @@
   &-fruit:hover {
     background-color: #474757;
     color: black;
-    border: 2px solid black;
   }
 }
+
+// #no-margin {
+//   margin-bottom: 15px;
+// }

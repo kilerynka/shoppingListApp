@@ -24,29 +24,31 @@
     }
   }
   &-shopList {
+    margin-bottom: 50px;
     height: 42px;
     width: 49px;
-    position: fixed;
-    bottom: 5%;
-    right: 10%;
+    align-self: flex-end;
+    grid-column: 4/6;
     background-image: url("./../assets/img/Mask\ group.svg");
-    background-position: cover;
     background-repeat: no-repeat;
   }
 }
 
 .section {
   grid-column: 2/6;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   background-color: #212032;
   border-radius: 20px;
   margin-bottom: 16px;
   &__ul {
+    grid-column: 2/4;
     min-width: 200px;
     height: 670px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 
   &__li {
@@ -77,4 +79,12 @@
 
 .last-a {
   border: none;
+}
+
+@media (min-width: 1000px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background-color: #626083;
+  }
 }
