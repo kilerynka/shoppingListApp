@@ -1,23 +1,26 @@
 const listOfItems = document.querySelector(".shoppingList-js");
 const deleteListItem = document.querySelector(".listDelete-js");
+const inputItem = document.querySelector(".inputItem-js");
+const btnAddItem = document.querySelector(".addItemToList-js");
 
 const keyList = "shopList";
 
-let shoppingList;
+let shoppingList = [];
 let i = 0;
 let currentItemValue;
 let currentItem;
 
 const shoppingListRender = () => {
-  let shopList = localStorage.getItem(keyList);
-  shoppingList = JSON.parse(shopList);
-  shoppingList.forEach(function (item) {
-    listOfItems.innerHTML += `<li class="listOfFruits-fruit ${
-      "number" + i
-    } fontStyle shoppingList-js">${item}</li>`;
-    i++;
-  });
-  console.log(shoppingList);
+  if (localStorage.getItem(keyList)) {
+    let shopList = localStorage.getItem(keyList);
+    shoppingList = JSON.parse(shopList);
+    shoppingList.forEach(function (item) {
+      listOfItems.innerHTML += `<li class="listOfFruits-fruit ${
+        "number" + i
+      } fontStyle shoppingList-js">${item}</li>`;
+      i++;
+    });
+  }
 };
 
 listOfItems.addEventListener("click", (e) => {
@@ -33,4 +36,15 @@ deleteListItem.addEventListener("click", (e) => {
   let currentItemIndex = shoppingList.indexOf(currentItemValue);
   shoppingList.splice(currentItemIndex, 1);
   localStorage.setItem(keyList, JSON.stringify(shoppingList));
+});
+
+btnAddItem.addEventListener("click", () => {
+  if (inputItem.value) {
+    shoppingList.push(inputItem.value);
+    localStorage.setItem(keyList, JSON.stringify(shoppingList));
+    listOfItems.innerHTML += `<li class="listOfFruits-fruit ${
+      "number" + i
+    } fontStyle shoppingList-js">${shoppingList[shoppingList.length - 1]}</li>`;
+    inputItem.value = " ";
+  }
 });
