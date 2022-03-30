@@ -14,6 +14,7 @@ const shoppingListRender = () => {
   if (localStorage.getItem(keyList)) {
     let shopList = localStorage.getItem(keyList);
     shoppingList = JSON.parse(shopList);
+    shoppingList.sort();
     shoppingList.forEach(function (item) {
       listOfItems.innerHTML += `<li class="listOfFruits-fruit ${
         "number" + i
@@ -41,10 +42,12 @@ deleteListItem.addEventListener("click", (e) => {
 btnAddItem.addEventListener("click", () => {
   if (inputItem.value) {
     shoppingList.push(inputItem.value);
+    shoppingList.sort();
+    const element = shoppingList.find((e) => e == inputItem.value);
     localStorage.setItem(keyList, JSON.stringify(shoppingList));
     listOfItems.innerHTML += `<li class="listOfFruits-fruit ${
       "number" + i
-    } fontStyle shoppingList-js">${shoppingList[shoppingList.length - 1]}</li>`;
+    } fontStyle shoppingList-js">${element}</li>`;
     inputItem.value = " ";
   }
 });

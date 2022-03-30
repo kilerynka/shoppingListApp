@@ -8,7 +8,32 @@ const key = "fruits";
 
 const keyList = "shopList";
 
-let fruits = ["Ananas", "Arbuz", "Banan"];
+let fruits = [
+  "Ananas",
+  "Arbuz",
+  "Banan",
+  "Brzoskwinia",
+  "Cytryna",
+  "Granat",
+  "Grejpfrut",
+  "Gruszka",
+  "Jabłko",
+  "Kiwi",
+  "Limonka",
+  "Malina",
+  "Mandarynka",
+  "Mango",
+  "Melon",
+  "Morela",
+  "Nektarynka",
+  "Pomarańcza",
+  "Porzeczka",
+  "Śliwka",
+  "Truskawka",
+  "Winogrono",
+  "Wiśnia",
+  "Żurawina",
+];
 let shopList = [];
 let currentFruit;
 let currentFruitValue;
@@ -24,12 +49,14 @@ const deleteItem = (currentItem, currentItemValue, itemsArray, key) => {
 btnAddFruit.addEventListener("click", (e) => {
   if (input.value) {
     fruits.push(input.value);
+    fruits.sort();
+    const element = fruits.find((e) => e == input.value);
     localStorage.setItem(key, JSON.stringify(fruits));
     let fruitsStorage = localStorage.getItem(key);
     fruits = JSON.parse(fruitsStorage);
     listOfFruits.innerHTML += `<li class="listOfFruits-fruit  ${
       "number" + i
-    } fontStyle fruit-js">${fruits[fruits.length - 1]}</li>`;
+    } fontStyle fruit-js">${element}</li>`;
     input.value = "";
     i++;
   }
