@@ -52,17 +52,13 @@ deleteFruit.addEventListener("click", () => {
 // });
 
 addToList.addEventListener("click", () => {
-  if (localStorage.shopList == "[]") {
-    let fruitToAdd = document.querySelector(`${"." + currentFruit}`);
-    shopList.push(fruitToAdd.innerHTML);
+  if (localStorage.getItem(keyList)) {
+    let listFromLocalStorage = localStorage.getItem(keyList);
+    shopList = JSON.parse(listFromLocalStorage);
+    shopList.push(currentFruitValue);
     localStorage.setItem(keyList, JSON.stringify(shopList));
-    console.log(true);
-  } else if (localStorage.getItem(keyList)) {
-    fruitToAdd = document.querySelector(`${"." + currentFruit}`);
-    shopList.push(fruitToAdd.innerHTML);
-    localStorage.setItem(keyList, JSON.stringify(shopList));
-    console.log(shopList);
   } else {
+    shopList.push(currentFruitValue);
     localStorage.setItem(keyList, JSON.stringify(shopList));
   }
 });
@@ -90,12 +86,12 @@ function fruitRender() {
   });
 }
 
-function shopListRender() {
-  let savedList = localStorage.getItem(keyList);
-  shopList = JSON.parse(savedList);
-  console.log(shopList);
-}
+// function shopListRender() {
+//   let savedList = localStorage.getItem(keyList);
+//   shopList = JSON.parse(savedList);
+//   console.log(shopList);
+// }
 
-shopListRender();
+// shopListRender();
 
 fruitRender();
