@@ -11,6 +11,9 @@ module.exports = {
     dairy: "./src/js/dairy.js",
     meat: "./src/js/meat.js",
     dry: "./src/js/dry.js",
+    drinks: "./src/js/drinks.js",
+    chemistry: "./src/js/chemistry.js",
+    others: "./src/js/others.js",
   },
   output: {
     filename: "[name].[hash:8].js",
@@ -120,6 +123,24 @@ module.exports = {
       inject: true,
       chunks: ["index", "dry"],
       filename: "dry.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/drinks.html",
+      inject: true,
+      chunks: ["index", "drinks"],
+      filename: "drinks.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/chemistry.html",
+      inject: true,
+      chunks: ["index", "chemistry"],
+      filename: "chemistry.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/others.html",
+      inject: true,
+      chunks: ["index", "others"],
+      filename: "others.html",
     }),
   ],
 };
