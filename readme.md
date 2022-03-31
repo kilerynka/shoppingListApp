@@ -1,4 +1,4 @@
-![cover](https://github.com/kilerynka/shoppingListApp/blob/master/public/shoppingList.png)
+![cover](https://github.com/kilerynka/shoppingListApp/blob/master/src/assets/img/shoppingList.png)
 
 # Shopping List app
 
