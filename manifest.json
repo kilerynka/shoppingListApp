@@ -1,6 +1,6 @@
 {
   "name": "ShoppingList",
-  "short_name": "SHP",
+  "short_name": "List",
   "theme_color": "#15141f",
   "background_color": "#15141f",
   "display": "standalone",
