@@ -1,18 +1,18 @@
-![cover](https://cotenfrontend.pl/img/cover.png)
+![cover](https://https://kilerynka.github.io/shoppingListApp/assets/img/shoppingList.png)
 
-# WTF Webpack Starter Kit 
+# Shopping List app
 
-Simple toolkit for your static websites development.
+Simple app based on progressive web app. You can download it on your phone and use it offline. Using this app you can create shopping list from prepared list of products that you can easily edit.Whole concept of the app is based on local storage so if you close app you won`t lose your changes and created shopping list.
 
-## How to use it?
+## Tools
 
-Click on `Use this template` button to generate a new repository based on this starter kit. After that clone it to your computer, go to the project directory in console and type `npm install`.
+-HTML
+-CSS
+-JavaScript
+-Progressive web app
+-LocalStorage
+-Webpack
 
 ## Available scripts
 
 `npm run start` - runs development mode
-
-`npm run build` - runs build process for production
-
-`npm run publish` - runs build process and publish the page using `gh-pages` branch
-
