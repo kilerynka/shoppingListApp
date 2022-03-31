@@ -6,12 +6,12 @@ Simple app based on progressive web app. You can download it on your phone and u
 
 ## Tools
 
--HTML
--CSS
--JavaScript
--Progressive web app
--LocalStorage
--Webpack
+- HTML
+- CSS
+- JavaScript
+- Progressive web app
+- LocalStorage
+- Webpack
 
 ## Available scripts
 
